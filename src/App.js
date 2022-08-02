@@ -19,7 +19,7 @@ function App() {
 	useEffect(() => {
 		axios({
 			method : 'GET' , 
-			url : "https://60d8372d6f13520017a681c8.mockapi.io/api/DataMovies" , 
+			url : "http://localhost:3000/api/movies" , 
 			data : null  
 		})  
 			.then(response => {	
@@ -37,17 +37,19 @@ function App() {
 			{
 				getDataLink.map((item, index) => {
 					return(
-						<Route path={"/detail" + item.id} component={() => ChildrenContent(item)} key={index}/>
+						<Route path={"/detail" + item._id} component={() => ChildrenContent(item)} key={item._id}/>
 					)
 				})
 			}
-			{
+			{/* {
 				getDataLink.map((item, index) => {
 					return(
-						<Route path={"/filter" + item.id} component={Filter} key={index}/>
+						<Route path={"/filter" + 1} component={Filter} key={item._id}/>
 					)
 				})
-			}
+			} */}
+
+			<Route path={"/category"} component={Filter} />
 			<Route path="/dangnhap" component={LogIn} />
 			<Route path="/dangky" component={SigUp} />
 			<Route path="/" exact component={ContentUpdate} />

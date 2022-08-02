@@ -6,15 +6,20 @@ import ChildrenContent from './ChildrenContent.js' ;
 const Filter = () => {
 	
 	const [FilterContent , setFilterContent] = useState([]) ; 
-	
+
+	const categoryString = window.location.hash.slice(11);
+
+
 	useEffect(() => {
 		axios({
 			method : 'GET' , 
-			url : "https://60d8372d6f13520017a681c8.mockapi.io/api/DataMovies" , 
+			url : "http://localhost:3000/api/movies" , 
 			data : null  
 		})  
 			.then(response => {	
+				console.log(response.data)
 				setFilterContent(response.data) ; 
+			
 			})
 			.catch(err => { console.log(err) ; }) ; 
 	} , []) ;
@@ -25,6 +30,9 @@ const Filter = () => {
 			behavior : 'smooth' , 
 		}) ; 
 	} ;
+
+
+
 	
 	return(
 		<section className="MainContent" >
@@ -37,13 +45,13 @@ const Filter = () => {
 							{
 								FilterContent.map((item, index) => {
 									return (
-										item.Movies.link === window.location.hash
+										item.categoryId === categoryString
 										?	<div className="block-singer-MainContent" key={index}>
 												<div className="singer-MainContent" >
 													<div className="product" >
-														<img src={item.Movies.img} alt="" />
+														<img src={item.image} alt="" />
 														<p className="top-title-singer-MainContent" > Thuyết Minh </p>
-														<p className="bottom-title-singer-MainContent" > {item.Movies.tenphim}</p>
+														<p className="bottom-title-singer-MainContent" > {item.name}</p>
 													</div>
 													<div className="rotate-product">
 														<p > Người Băng </p>
@@ -54,7 +62,7 @@ const Filter = () => {
 														<p > Ngày Phát Hành:<span>24 Tháng</span></p>
 														<p > Thể Loại:<span>Phim Hành Động</span></p>
 														<p > Thời Lượng:<span>104 Phút</span></p>
-														<NavLink onClick={scrollUp} to={"detail" + item.id} >Xem Phim</NavLink>
+														<NavLink onClick={scrollUp} to={"detail" + item._id} >Xem Phim</NavLink>
 													</div>
 												</div>
 											</div>

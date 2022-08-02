@@ -11,7 +11,7 @@ const MainContent = () => {
 	useEffect(() => {
 		axios({
 			method : 'GET' , 
-			url : "https://60d8372d6f13520017a681c8.mockapi.io/api/DataMovies" , 
+			url : "http://localhost:3000/api/movies" , 
 			data : null  
 		})  
 			.then(response => {	
@@ -38,12 +38,12 @@ const MainContent = () => {
 							{
 								DataMovie.map((item, index) => {
 									return (
-									<div className={window.location.hash === "#/" ? "block-singer-MainContent" : "block-movie"} key={index}>
+									<div className={window.location.hash === "#/" ? "block-singer-MainContent" : "block-movie"} key={item._id}>
 										<div className="singer-MainContent" >
 											<div className="product" >
-												<img src={item.Movies.img} alt="" />
+												<img src={item.photo} alt="" />
 												<p className="top-title-singer-MainContent" > Thuyết Minh </p>
-												<p className="bottom-title-singer-MainContent" > {item.Movies.tenphim}</p>
+												<p className="bottom-title-singer-MainContent" > {item.name}</p>
 											</div>
 											<div className="rotate-product">
 												<p > Người Băng </p>
@@ -54,7 +54,7 @@ const MainContent = () => {
 												<p > Ngày Phát Hành:<span>24 Tháng</span></p>
 												<p > Thể Loại:<span>Phim Hành Động</span></p>
 												<p > Thời Lượng:<span>104 Phút</span></p>
-												<NavLink to={"detail" + item.id} onClick={updateMovie} >Xem Phim</NavLink>
+												<NavLink to={"detail" + item._id} onClick={updateMovie} >Xem Phim</NavLink>
 											</div>
 										</div>
 									</div>

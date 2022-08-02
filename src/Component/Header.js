@@ -35,6 +35,8 @@ const Header = () => {
 		useEffect(() => {
 			window.addEventListener('scroll' , fixedHeader) ; 
 		} , []) ; 
+
+
 	
 	return(
 		<header className="header" style={scrollHeader === true ? {position : "fixed"} : {}}> 
@@ -57,42 +59,42 @@ const Header = () => {
 							<li  style={{color : "#df4f89"}}> TRANG CHỦ </li>
 							<li  onMouseEnter={(e) =>CloseOpenTheLoai(e)} onMouseLeave={(e) =>CloseOpenTheLoai(e)} style={showTheLoai === true && WITH <= 414 ? {color : "#00fcff"} : {}} > THỂ LOẠI <i className="fas fa-caret-down" ></i>
 								<div  id="block-TheLoai" style={showTheLoai === true ? {display : "flex"} :{display : "none"}}>
-									<NavLink to="/filter1" > Phim Bí Ẩn </NavLink>
-									<NavLink to="/filter2" > Phim Chiến Tranh </NavLink>
-									<NavLink to="/filter3" > Phim Chiếu Rạp </NavLink>
-									<NavLink to="/filter4" > Phim Chính Kịch - Drama </NavLink>
-									<NavLink to="/filter5" > Phim Cổ Trang </NavLink>
-									<NavLink to="/filter6" > Phim Phim Học Sinh </NavLink>
-									<NavLink to="/filter7" > Phim Hoạt Hình </NavLink>
-									<NavLink to="/filter8" > Phim Hành Động </NavLink>
-									<NavLink to="/filter9" > Phim Hình Sự </NavLink>
-									<NavLink to="/filter10" > Phim Kinh Dị </NavLink>
-									<NavLink to="/filter11" > Phim Lẻ </NavLink>
-									<NavLink to="/filter12" > Hài Hước </NavLink>
+									<NavLink to="/category/bi-an" > Phim Bí Ẩn </NavLink>
+									<NavLink to="/category" > Phim Chiến Tranh </NavLink>
+									<NavLink to="/category" > Phim Chiếu Rạp </NavLink>
+									<NavLink to="/category" > Phim Chính Kịch - Drama </NavLink>
+									<NavLink to="/category" > Phim Cổ Trang </NavLink>
+									<NavLink to="/category" > Phim Phim Học Sinh </NavLink>
+									<NavLink to="/category" > Phim Hoạt Hình </NavLink>
+									<NavLink to="/category" > Phim Hành Động </NavLink>
+									<NavLink to="/category" > Phim Hình Sự </NavLink>
+									<NavLink to="/category" > Phim Kinh Dị </NavLink>
+									<NavLink to="/category" > Phim Lẻ </NavLink>
+									<NavLink to="/category" > Hài Hước </NavLink>
 								</div> 
 							</li>
 							<li onMouseEnter={(e) =>CloseOpenQuocGia(e)} onMouseLeave={(e) =>CloseOpenQuocGia(e)} style={showQuocGia === true && WITH <= 414 ? {color : "#00fcff"} : {}}> QUỐC GIA <i className="fas fa-caret-down" ></i> 
 								<div id="block-QuocGia" style={showQuocGia === true ? {display : "flex"} :{display : "none"}}>
-									<NavLink to="/filter13" > Anh </NavLink>
-									<NavLink to="/filter14" > Mỹ </NavLink>
-									<NavLink to="/filter15" > Hàn </NavLink>
-									<NavLink to="/filter16" > Trung Quốc </NavLink>
-									<NavLink to="/filter17" > Nhật Bản </NavLink>
-									<NavLink to="/filter18" > Pháp </NavLink>
-									<NavLink to="/filter19" > Việt Nam </NavLink>
-									<NavLink to="/filter20" > Thái Lan </NavLink>
+									<NavLink to="/category" > Anh </NavLink>
+									<NavLink to="/category" > Mỹ </NavLink>
+									<NavLink to="/category" > Hàn </NavLink>
+									<NavLink to="/category" > Trung Quốc </NavLink>
+									<NavLink to="/category" > Nhật Bản </NavLink>
+									<NavLink to="/category" > Pháp </NavLink>
+									<NavLink to="/category" > Việt Nam </NavLink>
+									<NavLink to="/category" > Thái Lan </NavLink>
 								</div>
 							</li>
 							<li onMouseEnter={(e) =>CloseOpenPhimLe(e)} onMouseLeave={(e) =>CloseOpenPhimLe(e)} style={showPhimLe === true && WITH <= 414 ? {color : "#00fcff"} : {}} > PHIM LẺ <i className="fas fa-caret-down" ></i> 
 								<div  id="block-PhimLe" style={showPhimLe === true ? {display : "flex"} :{display : "none"}}>
-									<NavLink to="/filter21" > Phim Lẻ 2014 </NavLink>
-									<NavLink to="/filter22" > Phim Lẻ 2015 </NavLink>
-									<NavLink to="/filter23" > Phim Lẻ 2016 </NavLink>
-									<NavLink to="/filter24" > Phim Lẻ 2017 </NavLink>
-									<NavLink to="/filter25" > Phim Lẻ 2018 </NavLink>
-									<NavLink to="/filter26" > Phim Lẻ 2019 </NavLink>
-									<NavLink to="/filter27" > Phim Lẻ 2020 </NavLink>
-									<NavLink to="/filter28" > Phim Lẻ 2021 </NavLink>
+									<NavLink to="/category21" > Phim Lẻ 2014 </NavLink>
+									<NavLink to="/category22" > Phim Lẻ 2015 </NavLink>
+									<NavLink to="/category23" > Phim Lẻ 2016 </NavLink>
+									<NavLink to="/category24" > Phim Lẻ 2017 </NavLink>
+									<NavLink to="/category25" > Phim Lẻ 2018 </NavLink>
+									<NavLink to="/category26" > Phim Lẻ 2019 </NavLink>
+									<NavLink to="/category27" > Phim Lẻ 2020 </NavLink>
+									<NavLink to="/category28" > Phim Lẻ 2021 </NavLink>
 								</div>
 							</li>
 							<li onMouseEnter={(e) =>CloseOpenNgonNgu(e)} onMouseLeave={(e) =>CloseOpenNgonNgu(e)} style={showNgoNgu === true && WITH <= 414 ? {color : "#00fcff"} : {}} > NGÔN NGỮ <i className="fas fa-caret-down" ></i>
